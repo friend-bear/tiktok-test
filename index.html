@@ -26,11 +26,10 @@
     var idParam = getParameterByName('id');
 
     // Google AnalyticsにURLパラメータを送信
-    var configObject = { 'custom_map': { 'dimension1': 'id_param' } };
+    gtag('config', 'G-HT136R4SQ8');
     if (idParam) {
-      configObject['page_view'] = { 'id_param': idParam };
+      gtag('event', 'page_view', { 'id_param': idParam });
     }
-    gtag('config', 'G-HT136R4SQ8', configObject);
   </script>
   <script>
     setTimeout(function () {
