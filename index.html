@@ -26,9 +26,16 @@
     var idParam = getParameterByName('id');
 
     // Google AnalyticsにURLパラメータを送信
-    gtag('config', 'G-HT136R4SQ8');
     if (idParam) {
-      gtag('event', 'page_view', { 'id_param': idParam });
+      gtag('config', 'G-HT136R4SQ8', {
+        'custom_map': { 'dimension1': 'id_param' },
+        'id_param': idParam
+      });
+    } else {
+      gtag('config', 'G-HT136R4SQ8', {
+        'custom_map': { 'dimension1': 'id_param' },
+        'id_param': "idParam is null"
+      });
     }
   </script>
   <script>
